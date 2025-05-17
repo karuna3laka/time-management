@@ -54,29 +54,39 @@ function App() {
   };
 
   return (
-    <div className="app-container">
-      <Sidebar />
-      <main className="main-content">
-        <h1>My Tasks</h1>
-        <Timer 
-          activeTask={activeTask} 
-          onStart={handleStart} 
-          onStop={() => setActiveTask(null)} 
-        />
-        <TaskInput 
-          value={newTask} 
-          onChange={setNewTask} 
-          onAdd={handleAddTask} 
-        />
-        <TaskList
-          tasks={tasks}
-          activeTask={activeTask}
-          onToggle={handleToggle}
-          onDelete={handleDelete}
-          onStart={handleStart}
-          onDragEnd={handleDragEnd}
-        />
-      </main>
+    <div className="MainPanel">
+      <div className="app-container">
+        <Sidebar />
+        <main className="main-content">
+          <h4>My Tasks</h4>
+          <Timer 
+            activeTask={activeTask} 
+            onStart={handleStart} 
+            onStop={() => setActiveTask(null)} 
+          />
+          
+          <TaskInput 
+            value={newTask} 
+            onChange={setNewTask} 
+            onAdd={handleAddTask} 
+          />
+          <TaskList
+            tasks={tasks}
+            activeTask={activeTask}
+            onToggle={handleToggle}
+            onDelete={handleDelete}
+            onStart={handleStart}
+            onDragEnd={handleDragEnd}
+          />
+        </main>
+      </div>
+      
+      <div className="app-container1">
+        <h3>Right Panel</h3>
+        <p>Custom content goes here...</p>
+        
+        {/* Add any additional components you want in the blue area */}
+      </div>
     </div>
   );
 }
