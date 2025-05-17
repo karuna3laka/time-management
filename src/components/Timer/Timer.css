@@ -1,0 +1,61 @@
+.timer-display {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 12px 80px;
+  border-radius: 180px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  margin-bottom: 64px;
+  margin-top: 0%;
+}
+
+.timer-display .time {
+  font-size: 2.2rem;
+  font-family: 'SF Pro Display', 'Inter', 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #1C2526;
+}
+
+.timer-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'SF Pro Display', 'Inter', 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.timer-button.start {
+  background-color: #007AFF;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+}
+
+.timer-button.start:hover {
+  background-color: #005BB5;
+  box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.timer-button.stop {
+  background-color: #FF3B30;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.3);
+}
+
+.timer-button.stop:hover {
+  background-color: #D32F2F;
+  box-shadow: 0 6px 16px rgba(255, 59, 48, 0.4);
+  transform: translateY(-1px);
+}
+
+.timer-button:disabled {
+  background-color: rgba(200, 200, 200, 0.5);
+  color: #999999;
+  cursor: not-allowed;
+  box-shadow: none;
+}

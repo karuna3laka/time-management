@@ -1,0 +1,65 @@
+/* App.css */
+
+.app-container {
+  display: flex;                /* ➊ Horizontal layout: Sidebar + Main content */
+  flex-direction: row;          /* ➋ Left to right layout */
+  justify-content: flex-start;  /* ➌ Align items to the left */
+  align-items: stretch;         /* ➍ Sidebar and main content same height */
+  min-height: 100vh;            /* ➎ Full screen height */
+  gap: 0px;                    /* ➏ No gap between sidebar and main */
+  padding: 0px;                /* ➐ No padding on container */
+  margin: 0px;                 /* ➑ No margin on container */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* ➒ Font */
+}
+
+/* Sidebar fixed on left */
+.sidebar {
+  position: fixed;             /* Fix sidebar so it doesn't scroll */
+  top: 0;                     /* Start at top */
+  left: 0;                    /* Stick to left edge */
+  width: 250px;               /* Same width you had */
+  height: 100vh;              /* Full viewport height */
+  background-color: #dbe2d8;  /* Your original background */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.7);
+  overflow-y: auto;           /* Scroll if content overflows */
+  box-sizing: border-box;     /* Include padding in width */
+  z-index: 100;               /* Keep on top */
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;                    /* Take remaining space */
+  padding: 30px;
+  background-color: #475048;  /* Your original color */
+  margin-left: 250px;         /* Push main content right, same as sidebar width */
+  box-sizing: border-box;     /* Include padding in width */
+  transition: margin-left 0.3s ease;
+}
+
+.task-list-container {
+  position: relative;
+  max-height: 600px; /* adjust this based on your layout */
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Optional: hide ugly scrollbar */
+.task-list-container::-webkit-scrollbar {
+  width: 6px;
+}
+.task-list-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* The fade effect at the bottom */
+.task-list-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, white);
+}
