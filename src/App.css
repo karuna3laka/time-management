@@ -19,7 +19,7 @@
   left: 0;                    /* Stick to left edge */
   width: 250px;               /* Same width you had */
   height: 100vh;              /* Full viewport height */
-  background-color: #dbe2d8;  /* Your original background */
+  background-color: #464944;  /* Your original background */
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.7);
   overflow-y: auto;           /* Scroll if content overflows */
@@ -29,12 +29,22 @@
 
 /* Main content area */
 .main-content {
-  flex: 1;                    /* Take remaining space */
+  flex: 100;                    /* Take remaining space */
   padding: 30px;
-  background-color: #475048;  /* Your original color */
+  background-color: #050505;  /* Your original color */
   margin-left: 250px;         /* Push main content right, same as sidebar width */
   box-sizing: border-box;     /* Include padding in width */
   transition: margin-left 0.3s ease;
+  z-index: 10;
+   right: 300px; /* Align to right */
+  bottom: 112px; /* Full height */
+  z-index: 10; /* Ensure it stays above other content */
+  /* Sizing */
+  width: 500px; /* Default width */
+  min-width: 200px; /* Minimum resize width */
+  max-width: 900px; /* Maximum resize width */
+  height: 64vh; /* Full viewport height */
+  resize: horizontal;
 }
 
 .task-list-container {
@@ -65,7 +75,7 @@
 }
 .app-container1 {
   /* Basic Layout */
-  display: block; /* or block, grid, etc. */
+  display: flex; /* or block, grid, etc. */
   flex-direction: column; /* Stack children vertically */
   position: relative; /* Stick to viewport */
   top: 0;
@@ -73,15 +83,15 @@
   bottom: 112px; /* Full height */
   z-index: 100; /* Ensure it stays above other content */
   /* Sizing */
-  width: 1000px; /* Default width */
-  min-width: 200px; /* Minimum resize width */
-  max-width: 900px; /* Maximum resize width */
-  height: 60vh; /* Full viewport height */
+  width: 100px; /* Default width */
+  min-width: 1100px; /* Minimum resize width */
+  /* Maximum resize width */
+  height: 65vh; /* Full viewport height */
   resize: horizontal; /* Enable manual resizing */
   overflow: auto; /* Scroll if content overflows */
-   background-color: #1e90ff; /* Classic blue */
+   background-color: hwb(0 0% 100%); /* Classic blue */
   /* Spacing */
-  padding: 20px; /* Inner spacing */
+  padding: 0px; /* Inner spacing */
   margin: 0; /* Outer spacing */
   gap: 15px; /* Space between child elements */
     /* Remove blue background if needed */
@@ -97,3 +107,28 @@
 .main-content {
   margin-right: 300px; /* Same width as right panel */
 }
+
+.app-container2 {
+  /* Basic Layout */
+  display: flex; /* or block, grid, etc. */
+  flex-direction: column; /* Stack children vertically */
+  position: relative; /* Stick to viewport */
+  top: 644px;
+  left: -1900px; /* Align to right */
+  bottom: 20px; /* Full height */
+  z-index: 1; /* Ensure it stays above other content */
+  /* Sizing */
+  width: 100px; /* Default width */
+  min-width: 1600px; /* Minimum resize width */
+  max-width: 10px; /* Maximum resize width */
+  height: 32vh; /* Full viewport height */
+  resize: horizontal; /* Enable manual resizing */
+  overflow: auto; /* Scroll if content overflows */
+   background-color: #000000; /* Classic blue */
+  /* Spacing */
+  padding: 20px; /* Inner spacing */
+  margin: 0; /* Outer spacing */
+  gap: 15px; /* Space between child elements */
+    /* Remove blue background if needed */
+}
+

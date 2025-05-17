@@ -3,6 +3,12 @@ import { Sidebar } from './components/Sidebar/Sidebar';
 import { TaskInput } from './components/TaskInput/TaskInput';
 import { Timer } from './components/Timer/Timer';
 import { TaskList } from './components/TaskList/TaskList';
+import SpotlightCard from './components/SpotlightCard/SpotlightCard';
+import KanbanBoard from './components/Kaanban/KanbanBoard';
+import Particles from './components/Particles/Particles';
+
+
+
 
 import './App.css';
 
@@ -58,7 +64,7 @@ function App() {
       <div className="app-container">
         <Sidebar />
         <main className="main-content">
-          <h4>My Tasks</h4>
+            
           <Timer 
             activeTask={activeTask} 
             onStart={handleStart} 
@@ -77,16 +83,44 @@ function App() {
             onDelete={handleDelete}
             onStart={handleStart}
             onDragEnd={handleDragEnd}
-          />
+          /> 
+          
         </main>
       </div>
       
       <div className="app-container1">
-        <h3>Right Panel</h3>
-        <p>Custom content goes here...</p>
-        
+        <div style={{ 
+                width: '100%', 
+                height: '600px', 
+                position: 'relative',
+                background: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(1, 5, 10) 100%)' // Example gradient
+              }}>
+                <Particles
+                  particleColors={['#ffffff', '#ffffff']}
+                  particleCount={2000}
+                  particleSpread={10}
+                  speed={0.4}
+                  particleBaseSize={100}
+                  moveParticlesOnHover={true}
+                  alphaParticles={false}
+                  disableRotation={false}
+                />
+                
+              </div>
         {/* Add any additional components you want in the blue area */}
       </div>
+      <div className="app-container2">
+        <KanbanBoard
+            tasks={tasks}
+            onToggle={handleToggle}
+            onDelete={handleDelete}
+            onStart={handleStart}
+          />
+        {/* Add any additional components you want in the blue area */}
+      </div>
+
+      
+      
     </div>
   );
 }
